@@ -2,8 +2,8 @@ import socket  # Importamos el módulo socket
 
 def servidor_simple():
     # Configuración del servidor
-    host = "0.0.0.0"  # Escucha en todas las interfaces de red disponibles
-    puerto = 65432     # Puerto donde el servidor estará escuchando
+    host = "127.0.0.1"  # Escucha solo en localhost (más seguro para desarrollo)
+    puerto = 65432       # Puerto donde el servidor estará escuchando
 
     # Crear un socket TCP/IP
     servidor_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

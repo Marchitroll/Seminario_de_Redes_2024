@@ -1,7 +1,11 @@
+# Cliente TCP receptor de archivos
+# Usar junto con: 04_servidor_tcp_archivo.py
+# Primero ejecutar el servidor, luego este cliente
+
 import socket
 
 def cliente_recibe_archivo():
-    servidor_host = "127.0.0.1"  # Dirección IP del servidor (cambiar si el servidor está en otra máquina)
+    servidor_host = "127.0.0.1"  # Debe coincidir con 04_servidor_tcp_archivo.py
     servidor_puerto = 65432      # Puerto del servidor (debe coincidir con el del servidor)
 
     # Crear el socket TCP/IP

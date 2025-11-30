@@ -1,8 +1,8 @@
 import socket
 
 def servidor_envia_archivo():
-    host = "0.0.0.0"  # El servidor escuchará en todas las interfaces de red
-    puerto = 65432     # Puerto donde el servidor escuchará las conexiones
+    host = "127.0.0.1"  # Escucha solo en localhost (más seguro para desarrollo)
+    puerto = 65432       # Puerto donde el servidor escuchará las conexiones
 
     # Crear el socket TCP/IP
     servidor_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

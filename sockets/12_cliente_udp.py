@@ -1,8 +1,12 @@
+# Cliente UDP
+# Usar junto con: 11_servidor_udp.py
+# Primero ejecutar el servidor, luego este cliente
+
 import socket  # Importamos el módulo socket
 
 def cliente_udp():
     # Configuración del servidor al que nos conectaremos
-    host = "127.0.0.1"  # Dirección del servidor (local en este caso)
+    host = "127.0.0.1"  # Debe coincidir con 11_servidor_udp.py
     puerto = 65432      # Puerto del servidor (debe coincidir con el del servidor UDP)
 
     try:

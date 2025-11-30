@@ -1,0 +1,17 @@
+# Seminario de Redes 2024 - Requisitos
+# =====================================
+#
+# Este proyecto utiliza únicamente la biblioteca estándar de Python.
+# No requiere instalación de paquetes externos.
+#
+# Versión mínima requerida: Python 3.6+
+#
+# Módulos de la biblioteca estándar utilizados:
+# - socket: Programación de sockets TCP/UDP
+# - ipaddress: Manipulación de direcciones IP y redes CIDR
+#
+# Para verificar tu versión de Python:
+#   python --version
+#
+# Para ejecutar los scripts:
+#   python sockets/<nombre_script>.py

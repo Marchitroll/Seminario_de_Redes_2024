@@ -1,8 +1,12 @@
+# Cliente TCP de saludo
+# Usar junto con: 02_servidor_tcp_saludo.py
+# Primero ejecutar el servidor, luego este cliente
+
 import socket  # Importamos el módulo socket
 
 def cliente_simple():
     # Configuración del servidor al que nos conectaremos
-    host = "localhost"  # Dirección del servidor (local en este caso)
+    host = "localhost"  # Dirección del servidor (debe coincidir con 02_servidor_tcp_saludo.py)
     puerto = 65432      # Puerto del servidor (debe coincidir con el del servidor)
 
     try:
