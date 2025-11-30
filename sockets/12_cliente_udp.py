@@ -7,7 +7,7 @@ import socket  # Importamos el módulo socket
 def cliente_udp():
     # Configuración del servidor al que nos conectaremos
     host = "127.0.0.1"  # Debe coincidir con 11_servidor_udp.py
-    puerto = 65432      # Puerto del servidor (debe coincidir con el del servidor UDP)
+    puerto = 8081       # Puerto del servidor (debe coincidir con el del servidor UDP)
 
     try:
         # Crear un socket UDP

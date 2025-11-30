@@ -3,10 +3,13 @@ import socket  # Importamos el módulo socket
 def servidor_simple():
     # Configuración del servidor
     host = "127.0.0.1"  # Escucha solo en localhost (más seguro para desarrollo)
-    puerto = 65432       # Puerto donde el servidor estará escuchando
+    puerto = 8080        # Puerto donde el servidor estará escuchando
 
     # Crear un socket TCP/IP
     servidor_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    
+    # Permitir reutilizar el puerto inmediatamente después de cerrar el servidor
+    servidor_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
     
     # Asociar el socket al host y puerto configurados
     servidor_socket.bind((host, puerto))

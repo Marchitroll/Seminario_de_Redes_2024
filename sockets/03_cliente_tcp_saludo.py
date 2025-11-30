@@ -7,7 +7,7 @@ import socket  # Importamos el módulo socket
 def cliente_simple():
     # Configuración del servidor al que nos conectaremos
     host = "localhost"  # Dirección del servidor (debe coincidir con 02_servidor_tcp_saludo.py)
-    puerto = 65432      # Puerto del servidor (debe coincidir con el del servidor)
+    puerto = 8080       # Puerto del servidor (debe coincidir con el del servidor)
 
     try:
         # Crear un socket TCP/IP

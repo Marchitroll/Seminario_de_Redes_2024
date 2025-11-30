@@ -3,10 +3,13 @@ import socket  # Importamos el módulo socket
 def servidor_udp():
     # Configuración del servidor
     host = "127.0.0.1"  # Escucha solo en localhost (más seguro para desarrollo)
-    puerto = 65432       # Puerto donde el servidor estará escuchando
+    puerto = 8081        # Puerto donde el servidor estará escuchando (diferente al TCP)
 
     # Crear un socket UDP
     servidor_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    
+    # Permitir reutilizar el puerto inmediatamente después de cerrar el servidor
+    servidor_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
     
     # Asociar el socket al host y puerto configurados
     servidor_socket.bind((host, puerto))

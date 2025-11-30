@@ -26,7 +26,7 @@ python --version
 | `02_servidor_tcp_saludo.py` | Servidor TCP que acepta conexiones y envía un mensaje de bienvenida |
 | `03_cliente_tcp_saludo.py` | Cliente TCP que se conecta al servidor y recibe el saludo |
 | `04_servidor_tcp_archivo.py` | Servidor TCP que genera y envía un archivo al cliente |
-| `05_cliente_tcp_archivo.py` | Cliente TCP que recibe un archivo y lo convierte a mayúsculas |
+| `05_cliente_tcp_archivo.py` | Cliente TCP que recibe y guarda un archivo del servidor |
 
 ### 📡 Sockets UDP
 
@@ -88,6 +88,10 @@ python sockets/09_dns_lookup.py
 
 Los servidores están configurados para escuchar en `127.0.0.1` (localhost) por seguridad.  
 Si necesitas que el servidor acepte conexiones de otras máquinas en la red, cambia el host a `0.0.0.0`.
+
+**Puertos utilizados:**
+- Servidores TCP: `8080`
+- Servidor UDP: `8081`
 
 ---
 

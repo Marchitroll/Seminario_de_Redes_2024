@@ -3,10 +3,14 @@
 # Primero ejecutar el servidor, luego este cliente
 
 import socket
+import os
 
 def cliente_recibe_archivo():
     servidor_host = "127.0.0.1"  # Debe coincidir con 04_servidor_tcp_archivo.py
-    servidor_puerto = 65432      # Puerto del servidor (debe coincidir con el del servidor)
+    servidor_puerto = 8080       # Puerto del servidor (debe coincidir con el del servidor)
+    
+    # Obtener el directorio donde está el script
+    directorio_script = os.path.dirname(os.path.abspath(__file__))
 
     # Crear el socket TCP/IP
     cliente_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -16,8 +20,8 @@ def cliente_recibe_archivo():
         cliente_socket.connect((servidor_host, servidor_puerto))
         print(f"Conectado al servidor {servidor_host}:{servidor_puerto}")
 
-        # Nombre del archivo donde se guardará lo recibido
-        archivo_guardado = "archivo_recibido.txt"
+        # Nombre del archivo donde se guardará lo recibido (ruta absoluta)
+        archivo_guardado = os.path.join(directorio_script, "archivo_recibido.txt")
 
         # Abrir un archivo en modo escritura binaria para guardar los datos recibidos
         with open(archivo_guardado, "wb") as archivo:
@@ -28,8 +32,7 @@ def cliente_recibe_archivo():
                 datos = cliente_socket.recv(1024)  # Recibir hasta 1024 bytes
                 if not datos:  # Si no hay más datos, salir del bucle
                     break
-                datos_mayusculas = datos.decode('utf-8', errors='ignore').upper().encode('utf-8')
-                archivo.write(datos_mayusculas)  # Escribir los datos recibidos en el archivo
+                archivo.write(datos)  # Escribir los datos recibidos exactamente como llegaron
 
         print(f"Archivo recibido y guardado como '{archivo_guardado}'.")
 
